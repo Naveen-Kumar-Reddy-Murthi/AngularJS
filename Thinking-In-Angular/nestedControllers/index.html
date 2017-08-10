@@ -1,0 +1,56 @@
+<html ng-app="nestedControllers">
+
+<head>
+    <title>Nested Controllers</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body>
+    <h1>Nested Controllers App</h1>
+    <!-- Every Controller will have it's own
+          scope object -->
+    <!-- <div ng-controller="ctrl1">
+      <p>{{testprop}}</p>
+  </div>
+
+  <div ng-controller="ctrl2">
+     <p>{{testprop}}</p> -->
+
+    <!-- Every angular app will have a global
+          scope object even when there is no controller.
+          This scope is called root scope
+        -->
+    <div ng-init="testProp=10">
+    </div>
+
+    <!-- Above will work, as it will be of root scope -->
+
+    <!-- Nested Controllers -->
+
+    <!-- <div ng-controller="ctrl1">
+        <p>{{testprop}}</p>
+        <div ng-controller="ctrl2">
+            <p>{{testprop}}</p>
+        </div>
+    </div> -->
+
+    <!-- Controllers can have aliases which is useful
+         solving the issue. It's called as controller 
+         as syntax. Changes also need to be done in js
+         in controllers code-->
+    <div ng-controller="ctrl1 as c1">
+        <p>{{c1.testprop}}</p>
+        <div ng-controller="ctrl2 as c2">
+            <p>{{c2.testprop}}</p>
+             <p>{{c1.testprop}}</p>
+        </div>
+    </div>
+         <!-- The above way enables us to access any 
+              parent controller property from any child
+               controllers -->
+
+</body>
+
+</html>

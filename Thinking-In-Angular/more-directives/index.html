@@ -1,0 +1,51 @@
+<html ng-app="moreDirectivesApp">
+    <head>
+        <title>More Directives</title>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+         <h1> More Directives </h1>
+
+         <div ng-controller="moreDirectivesCtrl as ctrl">
+             <input type="checkbox" ng-model="ctrl.checked"></input>
+             <!-- <p ng-if="ctrl.checked"> some content</p>    -->
+                    <!--Above condition works like this. If expression evaluates
+                    to true, Angular lets bound element stay on DOM. If false, it removes from DOM  -->
+             <!-- <p ng-show="ctrl.checked"> some content</p>   -->
+                    <!-- where as ng-show/ng-hide uses css properties to show and 
+                         hide content. But content remains on the DOM   -->
+              <p ng-hide="ctrl.checked"> some content</p>  
+              
+              <!-- <div ng-repeat="i in ctrl.myList"> -->
+               <div ng-repeat="obj in ctrl.myList">
+                     
+                <!-- Hello -->
+                <!-- <p>{{ i }}</p> -->
+                <!-- Below are built in variables available
+                in ng-repeat directive -->
+                <p> Element: {{$index+1}}</p>       
+                <p> First: {{$first}}</p> 
+                <p> Last: {{$last}}</p>
+                <p> Middle: {{$middle}}</p>
+                <p> Even: {{$even}}</p>
+                <p> Odd: {{$odd}}</p>
+                <p>Name: {{obj.Name}}</p>
+                <p>Age:{{obj.Age}}</p>
+
+               </div> 
+
+              <!-- <div ng-repeat="i in ctrl.myList">
+                <p>Hello</p>
+                <p>there!</p>
+                <p>I'm</p>
+                <p>Angular</p>
+              </div> -->
+
+            </div>
+        
+    </body>
+
+
+</html>

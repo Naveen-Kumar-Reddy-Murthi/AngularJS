@@ -1,0 +1,22 @@
+<html ng-app="modulesApp">
+    <head>
+        <title>Modules</title>
+            <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <script src="myModule.js"></script>
+        <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+    </head>
+
+    <body>
+         <h1> Modules </h1>
+<div ng-controller="TagsDemoCtrl as ctrl">
+    <!-- {{ctrl.helloMessage}} -->
+     <tags-input ng-model="ctrl.tags"></tags-input>
+</div>
+        
+        
+    </body>
+
+
+</html>
