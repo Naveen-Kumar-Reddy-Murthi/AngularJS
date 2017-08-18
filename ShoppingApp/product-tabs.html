@@ -1,0 +1,19 @@
+<section class="tab">
+      <ul class="nav nav-pills">
+        <li ng-class="{ active: tab.isSet(1) }">
+          <a href ng-click="tab.setTab(1)">Description</a></li>
+        <li ng-class="{ active: tab.isSet(2) }">
+          <a href ng-click="tab.setTab(2)">Specs</a></li>
+        <li ng-class="{ active: tab.isSet(3) }">
+          <a href ng-click="tab.setTab(3)">Reviews</a></li>
+      </ul>
+        <div ng-show="tab.isSet(1)" ng-include="'product-description.html'">  
+       <!--  <product-description ng-show="tab.isSet(1)"></product-description> --><!--this is element level directive refer app.js directive body-->
+      </div>
+      <div ng-show="tab.isSet(2)" product-specs> <!--This is attribute level directive. Refer app.js directive body-->
+      </div>
+      <!--  Review Tab's Content  -->
+      <!-- <div ng-show="tab.isSet(3)"> </div> -->
+      <product-reviews ng-show="tab.isSet(3)"></product-reviews><!--this is also element level directive refer app.js directive body-->
+
+    </section>
